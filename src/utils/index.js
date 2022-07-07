@@ -47,6 +47,9 @@ const updateUrl = (queryOptions) => {
 
   const newQueryString = `?${qs.stringify(newQuery)}`;
   if (newQueryString !== window.location.search) {
+    /* TODO: JSFIX could not patch the breaking change:
+    Removed relative pathname support in hash history and memory history 
+    Suggested fix: Relative paths are no longer supportet by the hash/memory history, hence we recommend using the entire path name instead. */
     history.push(newQueryString);
   }
 };
